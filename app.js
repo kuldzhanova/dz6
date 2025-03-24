@@ -30,10 +30,22 @@ const averageAge = totalAge / users.length;
 console.log(`Average age of all users: ${averageAge}`);
 
 // второе задание
-
+const invertObject = obj => {
+    const b = {};
+    Object.entries(obj).forEach(([key, value]) => {
+        b[value] = key;
+    });
+    return b;
+};
+const roles = { admin: "Alice", user: "Bob", guest: "Charlie" };
+console.log(invertObject(roles)); // { Alice: "admin", Bob: "user", Charlie: "guest" }
 //третье задание
 
-words = ["apple", "banana", "apple", "orange", "banana", "apple"];
+const countOccurrences = arr => arr.reduce((val, word) => {
+    val[word] = (val[word] || 0) + 1;
+    return val;
+}, {});
+
+const words = ["apple", "banana", "apple", "orange", "banana", "apple"];
 console.log(countOccurrences(words)); // { apple: 3, banana: 2, orange: 1 }
 
-// Напишите функцию , которая считает, сколько раз каждый элемент встречается в массиве, используя метод reduce
